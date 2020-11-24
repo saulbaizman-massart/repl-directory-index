@@ -37,6 +37,7 @@ repl_owner = os.environ['REPL_OWNER']
 repl_name = os.environ['REPL_SLUG'].replace('-',' ')
 
 folders = os.listdir('.')
+folders.sort() # sort everything alphabetically
 '''
 All repls can have a file named ".env" which stores key/value pairs that can be easily read by Python. More details are here:
 https://docs.repl.it/repls/secret-keys
@@ -61,6 +62,7 @@ for folder in folders:
     content.append('<li>%s</li>' % folder )
     content.append('<ul>')
     files = os.listdir(folder)
+    files.sort() # sort everything alphabetically
     #print(files)
     for file in files:
       if os.path.isfile(os.path.join(folder,file)): # is it a file?
@@ -69,6 +71,7 @@ for folder in folders:
           content.append( format_link ( os.path.join(folder,file), file ) )
       if os.path.isdir(os.path.join(folder,file)):
         subfolder_files = os.listdir(os.path.join(folder,file))
+        subfolder_files.sort() # sort everything alphabetically
         for subfolder_file in subfolder_files:
         # is it a pdf or html file?
           if is_valid_file_type (subfolder_file):
