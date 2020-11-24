@@ -4,11 +4,17 @@ DO NOT DELETE THIS FILE.
 
 This program prints a directory with links to HTML, PDF, and text files.
 
-To create the directory, press Command + Shift + S. In the Terminal window, enter:
+To create the directory, press Command + Shift + S. In the Terminal window, enter the following command:
 
 $ python directory-list.py
 
 WARNING: this will over-write index.html.
+
+--
+
+To update this program, in the terminal window, enter the following command:
+
+$ wget -O directory-list.py https://raw.githubusercontent.com/saulbaizman-massart/repl-directory-index/master/directory-list.py
 '''
 
 import os
