@@ -15,11 +15,11 @@ import os
 
 def is_valid_file_type (filename ) :
 
-  valid_file_types = [ '.pdf', '.html', '.txt' ]
+  valid_file_types = [ 'pdf', 'html', 'txt' ]
 
   _, extension = os.path.splitext(filename)
 
-  if extension.lower() in valid_file_types:
+  if extension.lower()[1:] in valid_file_types:
     return True
   else:
     return False
