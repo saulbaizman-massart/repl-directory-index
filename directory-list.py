@@ -4,7 +4,7 @@ DO NOT DELETE THIS FILE.
 
 This program prints a directory with links to HTML, PDF, and text files.
 
-To create the directory, press Command + Shift + S. In the Terminal window, enter the following command:
+To create the directory, press Command + Shift + S. In the Terminal window enter the following command:
 
 $ python directory-list.py
 
