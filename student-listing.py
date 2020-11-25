@@ -1,7 +1,7 @@
 #!/opt/virtualenvs/python3/bin/python
 
 '''
-To run, press Command + Shift + S. In the Terminal window enter the following command:
+To run this program, press Command + Shift + S. In the Terminal window enter the following command:
 
 $ python student-listing.py
 
@@ -10,33 +10,12 @@ To update to the latest version:
 $ wget -O student-listing.py https://raw.githubusercontent.com/saulbaizman-massart/repl-directory-index/master/student-listing.py
 '''
 
-'''
-object structure:
-name (string)
-username (string)
-repls (list)
-+ repl path (string)
-+ repl url (string, computable based on repl path and username)
-
-'''
-
-'''
-class Student:
-    def __init__ (self, real_name, repl_username):
-        self.real_name = real_name
-        self.repl_username = repl_username
-        self.repls = [] # empty list
-    
-    def add_repl (self, repl_path):
-        self.repls.append (repl_path) # add path to list
-
-'''
-
 def format_link ( url, target ) :
-    return '<a href="https://%s" target="_blank">%s</a>' % ( url, target )
+    """Format a link."""
+    return '<a href="https://%s" target="_blank" rel="noopener">%s</a>' % ( url, target )
 
 name_map = {}
-name_map['Cj'] = 'cjray22'
+name_map['Cj'] = 'cjray22' # "Cj" is half-lowercased so that the name appears in the correct alphabetical order
 name_map['Chloe'] = 'ceallard'
 name_map['Daniel'] = 'DanielGrieco'
 name_map['Emma'] = 'EmSpaulding0707'
@@ -72,8 +51,14 @@ header='''
     <title>student directory &mdash; fa20</title>
     <style type="text/css">
     * { font-family: Helvetica, Arial, sans-serif }
-    ul > ul { margin-bottom: 15px }
+    ul ul { margin-bottom: 20px }
     li { line-height: 1.55em }
+    a { text-decoration: none; color: red ; }
+    a:hover, a:focus { background-color: rgba(250,0,0,.1) }
+    body > ul { list-style-type: none; padding-left: 0}
+    body > ul > li { font-size: 2rem; font-weight: bold }
+    body > ul > li > ul >li { font-size: 1rem; font-weight:normal }
+
     </style>
   </head>
   <body>
@@ -84,23 +69,21 @@ footer='''
   </body>
 </html>
 '''
+
 content = []
 
 content.append('<ul>')
 
+# loop through students
 for student in sorted (name_map.keys()):
     real_name = student.lower()
     repl_username = name_map[student]
-    content.append ( '<li>' )
-    content.append ( format_link ( 'repl.it/@%s' % repl_username, real_name ) )
-    content.append ( '</li>' )
-    content.append ("\n")
+    content.append ( '<li>%s' % format_link ( 'repl.it/@%s' % repl_username, real_name ) )
     content.append('<ul>')
+
+    # loop through each student's list of repls
     for repl in repl_map[repl_username]:
-        content.append ( '<li>' )
-        content.append ( '%s: %s | %s' % ( repl, format_link('repl.it/@%s/%s/' % ( repl_username, repl ) ,'repl'), format_link('%s.%s.repl.co' % ( repl, repl_username ),'website') ) )
-        content.append ( '</li>' )
-        content.append ("\n")
+        content.append ( '<li>%s: %s | %s</li>' % ( repl, format_link('repl.it/@%s/%s/' % ( repl_username, repl ) , 'repl'), format_link('%s.%s.repl.co' % ( repl, repl_username ), 'website') ) )
 
     content.append('</ul>')
     content.append('</li>')
@@ -113,6 +96,6 @@ content.append('</ul>')
 
 index = open("index.html", "w")
 index.write(header)
-index.write(''.join(content))
+index.write("\n".join(content))
 index.write(footer)
 index.close()
