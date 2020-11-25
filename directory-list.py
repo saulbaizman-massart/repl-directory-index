@@ -23,18 +23,24 @@ FIXME: the unordered lists should be nested in the parent list item.
 
 import os
 
-def is_valid_file_type (filename ) :
+def is_valid_file ( filename ):
+  """Check that the file type and filename are valid."""
 
+  # link only to these file types
   valid_file_types = [ 'pdf', 'html', 'txt' ]
+
+  # don't link to these files
+  file_exclusions = ['localStorage-b2c30773fe82c3d5e475613ad0f725fa9ab277fb.html']
 
   _, extension = os.path.splitext(filename)
 
-  if extension.lower()[1:] in valid_file_types:
+  if extension.lower()[1:] in valid_file_types and filename not in file_exclusions:
     return True
   else:
     return False
 
-def format_link ( url, target ) :
+def format_link ( url, target ):
+  """Format link."""
   return '<li><a href="/%s" target="_blank">%s</a></li>' % ( url, target )
 
 repl_owner = os.environ['REPL_OWNER']
@@ -70,7 +76,7 @@ header='''
     <meta name="viewport" content="width=device-width">
     <title>%s | %s</title>
     <style type="text/css">
-    * { font-family: Helvetica, Arial, sans-serif }
+    * { font-family: Helvetica, Arial, sans-serif; line-height: 1.55em }
     </style>
   </head>
   <body>
@@ -90,14 +96,14 @@ for folder in folders:
     for file in files:
       if os.path.isfile(os.path.join(folder,file)): # is it a file?
         # is it a pdf or html file?
-        if is_valid_file_type (file):
+        if is_valid_file (file):
           content.append( format_link ( os.path.join(folder,file), file ) )
       if os.path.isdir(os.path.join(folder,file)):
         subfolder_files = os.listdir(os.path.join(folder,file))
         subfolder_files.sort() # sort everything alphabetically
         for subfolder_file in subfolder_files:
         # is it a pdf or html file?
-          if is_valid_file_type (subfolder_file):
+          if is_valid_file (subfolder_file):
             content.append( format_link ( os.path.join(folder,file,subfolder_file), subfolder_file ) )
     
     content.append('</ul>')
