@@ -17,6 +17,10 @@ To update this program, in the terminal window, enter the following command:
 $ wget -O directory-list.py https://raw.githubusercontent.com/saulbaizman-massart/repl-directory-index/master/directory-list.py
 '''
 
+'''
+FIXME: the unordered lists should be nested in the parent list item.
+'''
+
 import os
 
 def is_valid_file_type (filename ) :
@@ -34,7 +38,23 @@ def format_link ( url, target ) :
   return '<li><a href="/%s" target="_blank">%s</a></li>' % ( url, target )
 
 repl_owner = os.environ['REPL_OWNER']
-repl_name = os.environ['REPL_SLUG'].replace('-',' ')
+repl_name = os.environ['REPL_SLUG'].replace('-',' ').lower()
+
+name_map = {}
+name_map['cjray22'] = 'CJ'
+name_map['ceallard'] = 'Chloe'
+name_map['DanielGrieco'] = 'Daniel'
+name_map['EmSpaulding0707'] = 'Emma'
+name_map['EmilyHCC'] = 'Emily'
+name_map['jponeillsantiag'] = 'Jean Paul'
+name_map['kadbril'] = 'Kade'
+name_map['KerryBlanchard'] = 'Kerry'
+name_map['Motsuki1120'] = 'Mao'
+name_map['MeghanYip'] = 'Meghan'
+name_map['omatheson99'] = 'Olivia'
+name_map['tanyaandreeva'] = 'Tanya'
+
+person_name = name_map[repl_owner].lower()
 
 folders = os.listdir('.')
 folders.sort() # sort everything alphabetically
@@ -48,11 +68,14 @@ header='''
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>%s: %s</title>
+    <title>%s | %s</title>
+    <style type="text/css">
+    * { font-family: Helvetica, Arial, sans-serif }
+    </style>
   </head>
   <body>
     <h1>%s: %s</h1>
-''' % (repl_owner, repl_name, repl_owner, repl_name )
+''' % (repl_owner.lower(), repl_name, person_name, repl_name )
 
 content = []
 
