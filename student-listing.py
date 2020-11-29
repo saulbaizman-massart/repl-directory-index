@@ -51,11 +51,13 @@ header='''
     <title>student directory &mdash; fa20</title>
     <style type="text/css">
     * { font-family: Helvetica, Arial, sans-serif }
+    body { margin: 50px }
     ul ul { margin-bottom: 20px }
     li { line-height: 1.55em }
     a { text-decoration: none; color: red }
     a:hover, a:focus { background-color: rgba(250,0,0,.1) }
     body > div.grid_parent > li { list-style-type: none; padding-left: 0; font-size: 2rem; font-weight: bold }
+    body > div.grid_parent > li > ul { margin-top:0; padding-left: 0 }
     body > div.grid_parent > li > ul > li { font-size: 1rem; font-weight: normal }
     body > div.grid_parent { display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(3,1fr); grid-auto-flow: column }
     </style>
