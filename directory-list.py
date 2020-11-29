@@ -118,6 +118,6 @@ footer='''
 # write to the file
 index = open("index.html", "w")
 index.write(header)
-index.write(''.join(content))
+index.write("\n".join(content))
 index.write(footer)
 index.close()
