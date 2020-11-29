@@ -82,7 +82,8 @@ for student in sorted (name_map.keys()):
 
     # loop through each student's list of repls
     for repl in repl_map[repl_username]:
-        content.append ( '<li>%s: %s | %s</li>' % ( repl, format_link('repl.it/@%s/%s/' % ( repl_username, repl ) , 'repl'), format_link('%s.%s.repl.co' % ( repl, repl_username ), 'website') ) )
+        repl_clean = repl.lower().replace('-',' ')
+        content.append ( '<li>%s: %s | %s</li>' % ( repl_clean, format_link('repl.it/@%s/%s/' % ( repl_username, repl ) , 'repl'), format_link('%s.%s.repl.co' % ( repl, repl_username ), 'website') ) )
 
     content.append('</ul>')
     content.append('</li>')
@@ -90,7 +91,6 @@ for student in sorted (name_map.keys()):
 content.append('</div>')
 
 # write to the file
-
 index = open("index.html", "w")
 index.write(header)
 index.write("\n".join(content))
