@@ -53,12 +53,11 @@ header='''
     * { font-family: Helvetica, Arial, sans-serif }
     ul ul { margin-bottom: 20px }
     li { line-height: 1.55em }
-    a { text-decoration: none; color: red ; }
+    a { text-decoration: none; color: red }
     a:hover, a:focus { background-color: rgba(250,0,0,.1) }
-    body > ul { list-style-type: none; padding-left: 0}
-    body > ul > li { font-size: 2rem; font-weight: bold }
-    body > ul > li > ul >li { font-size: 1rem; font-weight:normal }
-
+    body > div.grid_parent > li { list-style-type: none; padding-left: 0; font-size: 2rem; font-weight: bold }
+    body > div.grid_parent > li > ul > li { font-size: 1rem; font-weight: normal }
+    body > div.grid_parent { display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(3,1fr); grid-auto-flow: column }
     </style>
   </head>
   <body>
@@ -72,7 +71,7 @@ footer='''
 
 content = []
 
-content.append('<ul>')
+content.append('<div class="grid_parent">')
 
 # loop through students
 for student in sorted (name_map.keys()):
@@ -88,9 +87,7 @@ for student in sorted (name_map.keys()):
     content.append('</ul>')
     content.append('</li>')
 
-content.append('</ul>')
-
-# print ( ''.join(content) )
+content.append('</div>')
 
 # write to the file
 
