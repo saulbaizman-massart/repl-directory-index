@@ -42,29 +42,32 @@ repl_map['MeghanYip'] = ['homework','FinalProject','client-website',]
 repl_map['omatheson99'] = ['Homework','Final-Project',]
 repl_map['tanyaandreeva'] = ['Homework','Final-Project','Client-Website',]
 
+page_title = 'student directory &mdash; fa20'
+
 header='''
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>student directory &mdash; fa20</title>
+    <title>%s</title>
     <style type="text/css">
     * { font-family: Helvetica, Arial, sans-serif }
     body { margin: 50px }
     ul ul { margin-bottom: 20px }
     li { line-height: 1.55em }
-    a { text-decoration: none; color: red }
+    a { text-decoration: none; color: red; font-weight: bold }
     a:hover, a:focus { background-color: rgba(250,0,0,.1) }
     body > div.grid_parent > li { list-style-type: none; padding-left: 0; font-size: 2rem; font-weight: bold }
     body > div.grid_parent > li > ul { margin-top:0; padding-left: 0 }
     body > div.grid_parent > li > ul > li { font-size: 1rem; font-weight: normal }
+    body > div.grid_parent > li > ul > li > span.separator { color: rgb(180,180,180) }
     body > div.grid_parent { display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(3,1fr); grid-auto-flow: column }
     </style>
   </head>
   <body>
-    <h1>student directory &mdash; fa20</h1>
-'''
+    <h1>%s</h1>
+''' % ( page_title, page_title )
 
 footer='''
   </body>
@@ -85,7 +88,7 @@ for student in sorted (name_map.keys()):
     # loop through each student's list of repls
     for repl in repl_map[repl_username]:
         repl_clean = repl.lower().replace('-',' ')
-        content.append ( '<li>%s: %s | %s</li>' % ( repl_clean, format_link('repl.it/@%s/%s/' % ( repl_username, repl ) , 'repl'), format_link('%s.%s.repl.co' % ( repl, repl_username ), 'website') ) )
+        content.append ( '<li>%s<br>%s <span class="separator">&bull;</span> %s</li>' % ( repl_clean, format_link('repl.it/@%s/%s/' % ( repl_username, repl ) , 'repl'), format_link('%s.%s.repl.co' % ( repl, repl_username ), 'website') ) )
 
     content.append('</ul>')
     content.append('</li>')
