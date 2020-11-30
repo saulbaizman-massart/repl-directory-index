@@ -29,18 +29,18 @@ name_map['Olivia'] = 'omatheson99'
 name_map['Tanya'] = 'tanyaandreeva'
 
 repl_map = {}
-repl_map['cjray22'] = ['homework','final-project']
-repl_map['ceallard'] = ['Homework','Final-Project']
-repl_map['DanielGrieco'] = ['homework','Final-Project']
-repl_map['EmSpaulding0707'] = ['homework','Final-Project']
-repl_map['EmilyHCC'] = ['Homework','Final-Project']
-repl_map['jponeillsantiag'] = ['homework','Final-Project']
-repl_map['kadbril'] = ['homework','Final-Project']
-repl_map['KerryBlanchard'] = ['homework','Final-Project']
-repl_map['Motsuki1120'] = ['homework','final-project']
-repl_map['MeghanYip'] = ['homework','FinalProject']
-repl_map['omatheson99'] = ['Homework','Final-Project']
-repl_map['tanyaandreeva'] = ['Homework','Final-Project']
+repl_map['cjray22'] = ['homework','final-project','client-website',]
+repl_map['ceallard'] = ['Homework','Final-Project','Client-Website',]
+repl_map['DanielGrieco'] = ['homework','Final-Project','Client-Website',]
+repl_map['EmSpaulding0707'] = ['homework','Final-Project','Client-Websitehtml',]
+repl_map['EmilyHCC'] = ['Homework','Final-Project','Client-Website',]
+repl_map['jponeillsantiag'] = ['homework','Final-Project','client-website',]
+repl_map['kadbril'] = ['homework','Final-Project','Client-Website',]
+repl_map['KerryBlanchard'] = ['homework','Final-Project','Client-Website',]
+repl_map['Motsuki1120'] = ['homework','final-project','client-website',]
+repl_map['MeghanYip'] = ['homework','FinalProject','client-website',]
+repl_map['omatheson99'] = ['Homework','Final-Project',]
+repl_map['tanyaandreeva'] = ['Homework','Final-Project','Client-Website',]
 
 header='''
 <!DOCTYPE html>
