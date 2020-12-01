@@ -39,7 +39,7 @@ repl_map['kadbril'] = ['homework','Final-Project','Client-Website',]
 repl_map['KerryBlanchard'] = ['homework','Final-Project','Client-Website',]
 repl_map['Motsuki1120'] = ['homework','final-project','client-website',]
 repl_map['MeghanYip'] = ['homework','FinalProject','client-website',]
-repl_map['omatheson99'] = ['Homework','Final-Project',]
+repl_map['omatheson99'] = ['Homework','Final-Project','Client-Website',]
 repl_map['tanyaandreeva'] = ['Homework','Final-Project','Client-Website',]
 
 page_title = 'student directory &mdash; fa20'
