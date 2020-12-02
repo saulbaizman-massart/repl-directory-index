@@ -1,4 +1,5 @@
 #!/opt/virtualenvs/python3/bin/python
+# -*- coding: utf-8 -*-
 
 '''
 To run this program, press Command + Shift + S. In the Terminal window enter the following command:
@@ -61,6 +62,7 @@ header='''
     body > div.grid_parent > li { list-style-type: none; padding-left: 0; font-size: 2rem; font-weight: bold }
     body > div.grid_parent > li > ul { margin-top:0; padding-left: 0 }
     body > div.grid_parent > li > ul > li { font-size: 1rem; font-weight: normal }
+    body > div.grid_parent > li > ul > li::marker { content: "— " }
     body > div.grid_parent > li > ul > li > span.separator { color: rgb(180,180,180) }
     body > div.grid_parent { display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(3,1fr); grid-auto-flow: column }
     </style>
