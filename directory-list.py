@@ -19,6 +19,8 @@ $ wget -O directory-list.py https://raw.githubusercontent.com/saulbaizman-massar
 
 '''
 FIXME: the unordered lists should be nested in the parent list item.
+
+TODO: exclude listing empty folders, or folders with no valid files.
 '''
 
 import os
