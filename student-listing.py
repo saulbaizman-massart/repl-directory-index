@@ -45,6 +45,20 @@ repl_map['MeghanYip'] = ['homework','FinalProject','client-website',]
 repl_map['omatheson99'] = ['Homework','Final-Project','Client-Website',]
 repl_map['tanyaandreeva'] = ['Homework','Final-Project','Client-Website',]
 
+avatar_url_map = {}
+avatar_url_map['cjray22'] = 'https://cdn.discordapp.com/avatars/754893931665424424/9dbc8742a3051b3e84f1474e35bd851e.png?size=256'
+avatar_url_map['ceallard'] = 'https://cdn.discordapp.com/avatars/754856841950789682/09735bdb5d07f419fe97503e50c122dd.png?size=256'
+avatar_url_map['DanielGrieco'] = 'https://cdn.discordapp.com/avatars/754821840848814201/f921a001a96cfb86117869415f039378.png?size=256'
+avatar_url_map['EmSpaulding0707'] = 'https://discord.com/assets/1cbd08c76f8af6dddce02c5138971129.png'
+avatar_url_map['EmilyHCC'] = 'https://cdn.discordapp.com/avatars/751484235512283236/a6a54851bcc2be444f3b7e3569f0405e.png?size=256'
+avatar_url_map['jponeillsantiag'] = 'https://cdn.discordapp.com/avatars/754914909623681136/cd433ce88ea1cc33a421871172de0339.png?size=256'
+avatar_url_map['kadbril'] = 'https://cdn.discordapp.com/avatars/754863313824907294/2dfeb0d18cc8a052782cc7bf72dfa38f.png?size=256'
+avatar_url_map['KerryBlanchard'] = 'https://cdn.discordapp.com/avatars/755047905567440908/295673f9238facf71a16e3348ed880cd.png?size=256'
+avatar_url_map['Motsuki1120'] = 'https://cdn.discordapp.com/avatars/753627598336294951/e569cc06bc09c78a836824b4f9b366ed.png?size=256'
+avatar_url_map['MeghanYip'] = 'https://cdn.discordapp.com/avatars/721434474239229953/39e7d6a919d3f7f3bc243d7b475c4ad7.png?size=256'
+avatar_url_map['omatheson99'] = 'https://cdn.discordapp.com/avatars/754932634290749590/a8092606f1bd8f0a63d11eeefd528005.png?size=256'
+avatar_url_map['tanyaandreeva'] = 'https://cdn.discordapp.com/avatars/754876730870857798/c8d13066a8ff42b256dcb3cdb922bbde.png?size=256'
+
 page_title = 'student directory &mdash; fa20'
 
 header='''
@@ -81,20 +95,18 @@ footer='''
 </html>
 '''
 
-image_subfolder = 'img'
-
 content = []
 
 content.append('<div class="grid_parent">')
 
 # loop through students
 for student in sorted (name_map.keys()):
+    # the student's first name
     real_name = student.lower()
+    # the student's repl username
     repl_username = name_map[student]
-    
-    image = '%s/%s.png' % ( image_subfolder, real_name )
-    if not os.path.exists(image):
-        image = '%s/blank.png' % image_subfolder
+    # image url that lives on discord
+    image = avatar_url_map[repl_username]
     content.append ( '<div class="student"><p class="avatar_container"><img class="avatar" src="%s" title="%s"></p>' % ( image, real_name ) )
     content.append ( '<section class="links">' )
     content.append ( '<p class="repl_user_link_container">%s</p>' % format_link ( 'repl.it/@%s' % repl_username, real_name ) )
