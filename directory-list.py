@@ -41,10 +41,30 @@ def is_valid_file ( filename ):
   else:
     return False
 
-def format_link ( url, target ):
+def format_link ( url, target, type = "on-site"):
   """Format link."""
-  return '<li><a href="/%s" target="_blank">%s</a></li>' % ( url, target )
 
+  extra = ''
+
+  prefix = '/'
+
+  if type == 'off-site':
+    prefix = ''
+
+  # get contents of text file, it's probably a link.
+  _, target_extension = os.path.splitext(target)
+  
+  if target_extension.lower()[1:] == 'txt':
+    text_file = open ( url, "r" )
+    text_file_contents = text_file.read()
+    text_file.close
+    # does it begin with http?
+    if text_file_contents[0:4] == 'http':
+      extra = '(%s)' % format_link ( text_file_contents, 'visit link', 'off-site' ).strip()
+
+  return '<a href="%s%s" target="_blank">%s</a> %s' % ( prefix, url, target, extra )
+
+# grab environment variables
 repl_owner = os.environ['REPL_OWNER']
 repl_name = os.environ['REPL_SLUG'].replace('-',' ').lower()
 
@@ -97,14 +117,14 @@ for folder in folders:
       if os.path.isfile(os.path.join(folder,file)): # is it a file?
         # is it a pdf or html file?
         if is_valid_file (file):
-          content.append( format_link ( os.path.join(folder,file), file ) )
+          content.append( '<li>%s</li>' % format_link ( os.path.join(folder,file), file ) )
       if os.path.isdir(os.path.join(folder,file)):
         subfolder_files = os.listdir(os.path.join(folder,file))
         subfolder_files.sort() # sort everything alphabetically
         for subfolder_file in subfolder_files:
-        # is it a pdf or html file?
+        # is it a pdf or html or text file?
           if is_valid_file (subfolder_file):
-            content.append( format_link ( os.path.join(folder,file,subfolder_file), subfolder_file ) )
+              content.append( '<li>%s</li>' % format_link ( os.path.join(folder,file,subfolder_file), subfolder_file ) )
     
     content.append('</ul>')
   
