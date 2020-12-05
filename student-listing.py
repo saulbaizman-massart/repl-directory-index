@@ -75,7 +75,7 @@ header='''
     li { line-height: 1.55em }
     a { text-decoration: none; color: red; font-weight: bold }
     a:hover, a:focus { background-color: rgba(250,0,0,.1) }
-    body > div.grid_parent > div.student { list-style-type: none; list-style-position: inside ; padding-left: 0; font-size: 2rem; font-weight: bold; background-color: #eee; border-radius: 10px ; padding: 20px 20px 0 35px ; }
+    body > div.grid_parent > div.student { list-style-type: none; list-style-position: inside ; padding-left: 0; font-size: 2rem; font-weight: bold; background-color: #eee; border-radius: 10px ; padding: 20px 30px 0 30px ; }
     body > div.grid_parent > div.student > section.links > ul { margin-top:0; padding-left: 0 }
     body > div.grid_parent > div.student > section.links > ul > li { font-size: 1rem; font-weight: normal }
     body > div.grid_parent > div.student > section.links > ul > li::marker { content: "— " }
