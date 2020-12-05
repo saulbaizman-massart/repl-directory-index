@@ -77,9 +77,7 @@ header='''
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>%s | %s</title>
-    <style type="text/css">
-    * { font-family: Helvetica, Arial, sans-serif; line-height: 1.55em }
-    </style>
+    <link type="text/css" rel="stylesheet" href="https://global-styles.saulbaizman.repl.co/style.css">
   </head>
   <body>
     <h1>%s: %s</h1>
