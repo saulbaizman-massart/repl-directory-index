@@ -59,7 +59,7 @@ avatar_url_map['MeghanYip'] = 'https://cdn.discordapp.com/avatars/72143447423922
 avatar_url_map['omatheson99'] = 'https://cdn.discordapp.com/avatars/754932634290749590/a8092606f1bd8f0a63d11eeefd528005.png?size=256'
 avatar_url_map['tanyaandreeva'] = 'https://cdn.discordapp.com/avatars/754876730870857798/c8d13066a8ff42b256dcb3cdb922bbde.png?size=256'
 
-page_title = 'student directory &mdash; fa20'
+page_title = 'fa20 student directory'
 
 header='''
 <!DOCTYPE html>
