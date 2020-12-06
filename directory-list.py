@@ -108,7 +108,7 @@ content = []
 content.append('<ul>')
 for folder in folders:
   if os.path.isdir(folder): # is it a folder?
-    content.append('<li>%s</li>' % folder )
+    content.append('<li>%s' % folder )
     content.append('<ul>')
     files = os.listdir(folder)
     files.sort() # sort everything alphabetically
@@ -126,7 +126,7 @@ for folder in folders:
           if is_valid_file (subfolder_file):
               content.append( '<li>%s</li>' % format_link ( os.path.join(folder,file,subfolder_file), subfolder_file ) )
     
-    content.append('</ul>')
+    content.append('</li></ul>')
   
 content.append('</ul>')
 
