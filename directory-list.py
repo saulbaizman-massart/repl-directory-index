@@ -133,6 +133,11 @@ content.append('</ul>')
 footer='''
   </body>
 </html>
+
+<!-- why is empty script tag here? -->
+<!-- https://stackoverflow.com/questions/14389566/stop-css-transition-from-firing-on-page-load -->
+<script> </script>
+
 '''
 
 # write to the file
