@@ -49,7 +49,7 @@ avatar_url_map = {}
 avatar_url_map['cjray22'] = 'https://cdn.discordapp.com/avatars/754893931665424424/9dbc8742a3051b3e84f1474e35bd851e.png?size=256'
 avatar_url_map['ceallard'] = 'https://cdn.discordapp.com/avatars/754856841950789682/09735bdb5d07f419fe97503e50c122dd.png?size=256'
 avatar_url_map['DanielGrieco'] = 'https://cdn.discordapp.com/avatars/754821840848814201/f921a001a96cfb86117869415f039378.png?size=256'
-avatar_url_map['EmSpaulding0707'] = 'https://discord.com/assets/1cbd08c76f8af6dddce02c5138971129.png'
+avatar_url_map['EmSpaulding0707'] = 'https://cdn.discordapp.com/avatars/754881803780620348/737e32fc58a6ddb5402460d8c8ff9d46.png?size=256'
 avatar_url_map['EmilyHCC'] = 'https://cdn.discordapp.com/avatars/751484235512283236/a6a54851bcc2be444f3b7e3569f0405e.png?size=256'
 avatar_url_map['jponeillsantiag'] = 'https://cdn.discordapp.com/avatars/754914909623681136/cd433ce88ea1cc33a421871172de0339.png?size=256'
 avatar_url_map['kadbril'] = 'https://cdn.discordapp.com/avatars/754863313824907294/2dfeb0d18cc8a052782cc7bf72dfa38f.png?size=256'
