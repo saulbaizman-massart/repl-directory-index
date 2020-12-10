@@ -2,7 +2,17 @@
 #
 # DO NOT DELETE THIS FILE.
 #
-# Download and run directory-list.py from GitHub.
+# To run this program, press Command + Shift + S. In the Terminal window enter the following command:
+#
+# $ sh directory-list.sh
+#
+# To update to the latest version:
+#
+# $ wget -O directory-list.sh https://raw.githubusercontent.com/saulbaizman-massart/repl-directory-index/master/directory-list.sh
+#
+# -----
+#
+# This program downloads and runs directory-list.py from GitHub.
 #
 
 SELF=${0##*/}
