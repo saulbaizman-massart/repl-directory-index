@@ -41,7 +41,7 @@ repl_map['jponeillsantiag'] = ['homework','Final-Project','client-website',]
 repl_map['kadbril'] = ['Homework','Final-Project','Client-Website',]
 repl_map['KerryBlanchard'] = ['Homework','Final-Project','Client-Website',]
 repl_map['Motsuki1120'] = ['homework','final-project','client-website',]
-repl_map['MeghanYip'] = ['homework','FinalProject','client-website',]
+repl_map['MeghanYip'] = ['Homework','FinalProject','client-website',]
 repl_map['omatheson99'] = ['Homework','Final-Project','Client-Website',]
 repl_map['tanyaandreeva'] = ['Homework','Final-Project','Client-Website',]
 
