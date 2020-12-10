@@ -83,6 +83,7 @@ header='''
     body > div.grid_parent { display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(3,1fr); grid-auto-flow: column ; grid-gap: 30px }
     img.avatar { width: 128px; height: 128px; background-color: #888 ; border-radius: 50%%; box-shadow: 0 0 6px 3px #ccc }
     p.avatar_container { text-align: center; margin: 10px 0 }
+    p.avatar_container a:hover, p.avatar_container a:focus { background-color: rgba(250,0,0,0) }
     p.repl_user_link_container { text-align: center; margin: 10px 0 }
     </style>
   </head>
@@ -107,7 +108,7 @@ for student in sorted (name_map.keys()):
     repl_username = name_map[student]
     # image url that lives on discord
     image = avatar_url_map[repl_username]
-    content.append ( '<div class="student"><p class="avatar_container"><img class="avatar" src="%s" title="%s"></p>' % ( image, real_name ) )
+    content.append ( '<div class="student"><p class="avatar_container">%s</p>' % format_link ( 'repl.it/@%s' % repl_username, '<img class="avatar" src="%s" title="%s">' % ( image, real_name ) ) )
     content.append ( '<section class="links">' )
     content.append ( '<p class="repl_user_link_container">%s</p>' % format_link ( 'repl.it/@%s' % repl_username, real_name ) )
     content.append('<ul>')
