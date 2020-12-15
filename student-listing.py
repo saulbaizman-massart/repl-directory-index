@@ -43,7 +43,7 @@ repl_map['KerryBlanchard'] = ['Homework','Final-Project','Client-Website',]
 repl_map['Motsuki1120'] = ['homework','final-project','client-website',]
 repl_map['MeghanYip'] = ['Homework','FinalProject','client-website',]
 repl_map['omatheson99'] = ['Homework','Final-Project','Client-Website',]
-repl_map['tanyaandreeva'] = ['Homework','Final-Project','Client-Website',]
+repl_map['tanyaandreeva'] = ['Homework','Final-Project','Client-Website2020.html',]
 
 avatar_url_map = {}
 avatar_url_map['cjray22'] = 'https://cdn.discordapp.com/avatars/754893931665424424/9dbc8742a3051b3e84f1474e35bd851e.png?size=256'
