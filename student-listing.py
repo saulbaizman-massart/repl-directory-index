@@ -13,6 +13,8 @@ $ wget -O student-listing.py https://raw.githubusercontent.com/saulbaizman-massa
 
 import os
 
+output_filename = 'student-directory.html'
+
 def format_link ( url, target ) :
     """Format a link."""
     return '<a href="https://%s" target="_blank" rel="noopener">%s</a>' % ( url, target )
@@ -125,7 +127,7 @@ for student in sorted (name_map.keys()):
 content.append('</div>')
 
 # write to the file
-index = open("index.html", "w")
+index = open(output_filename, "w")
 index.write(header)
 index.write("\n".join(content))
 index.write(footer)
