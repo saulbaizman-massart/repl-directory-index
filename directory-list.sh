@@ -23,7 +23,8 @@ DIRECTORY_LIST=directory-list.py
 GITHUB_USER=saulbaizman-massart
 GITHUB_REPO=repl-directory-index
 GITHUB_BRANCH=master
-DOWNLOAD_URL=https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${DIRECTORY_LIST}
+GITHUB_HOST=raw.githubusercontent.com
+DOWNLOAD_URL=https://${GITHUB_HOST}/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${DIRECTORY_LIST}
 
 echo
 echo Starting ${SELF}...
