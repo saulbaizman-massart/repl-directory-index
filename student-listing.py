@@ -14,6 +14,7 @@ $ wget -O student-listing.py https://raw.githubusercontent.com/saulbaizman-massa
 import os
 
 output_filename = 'student-directory.html'
+replit_website = 'replit.com'
 
 def format_link ( url, target ) :
     """Format a link."""
@@ -110,15 +111,15 @@ for student in sorted (name_map.keys()):
     repl_username = name_map[student]
     # image url that lives on discord
     image = avatar_url_map[repl_username]
-    content.append ( '<div class="student"><p class="avatar_container">%s</p>' % format_link ( 'repl.it/@%s' % repl_username, '<img class="avatar" src="%s" title="%s">' % ( image, real_name ) ) )
+    content.append ( '<div class="student"><p class="avatar_container">%s</p>' % format_link ( '%s/@%s' % ( replit_website, repl_username ), '<img class="avatar" src="%s" title="%s">' % ( image, real_name ) ) )
     content.append ( '<section class="links">' )
-    content.append ( '<p class="repl_user_link_container">%s</p>' % format_link ( 'repl.it/@%s' % repl_username, real_name ) )
+    content.append ( '<p class="repl_user_link_container">%s</p>' % format_link ( '%s/@%s' % ( replit_website, repl_username ), real_name ) )
     content.append('<ul>')
 
     # loop through each student's list of repls
     for repl in repl_map[repl_username]:
         repl_clean = repl.lower().replace('-',' ')
-        content.append ( '<li>%s: %s <span class="separator">&bull;</span> %s</li>' % ( repl_clean, format_link('repl.it/@%s/%s/' % ( repl_username, repl ) , 'repl'), format_link('%s.%s.repl.co' % ( repl, repl_username ), 'website') ) )
+        content.append ( '<li>%s: %s <span class="separator">&bull;</span> %s</li>' % ( repl_clean, format_link('%s/@%s/%s/' % ( replit_website, repl_username, repl ), 'repl'), format_link('%s.%s.repl.co' % ( repl, repl_username ), 'website') ) )
 
     content.append('</ul>')
     content.append( '</section>' )
